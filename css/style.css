@@ -1,0 +1,131 @@
+#resetViewButton{
+    background-color: #89b9d9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    background: #e8e2c9;
+    /*border: 1px solid black;*/
+    border-radius: 2px;
+    pointer-events: none;  /* Don't block mouse events */
+    font-size: 10px;
+}
+
+.section {
+    background-size: cover;
+    background-attachment: scroll; /* or scroll, depending on desired effect */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#section1 {
+    background-image: url('../img/edgar.jpg');
+    /*background: rgba(0, 0, 0, 0.5);*/
+    /* ... other background styles ... */
+}
+
+/*#section2 {*/
+/*    background-image: url('path/to/image2.jpg');*/
+/*    !* ... other background styles ... *!*/
+/*}*/
+
+/*#section3 {*/
+/*    background-image: url('path/to/image3.jpg');*/
+/*    !* ... other background styles ... *!*/
+/*}*/
+
+h1 {
+    color: rgba(227, 220, 209, 0.92);
+    font-size: 50px;
+    padding: 10px;
+    font-weight: bold;
+
+}
+
+
+#treemapDiv {
+    position: relative;
+}
+
+#treemapDiv svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#treemapDiv svg:nth-of-type(2) { /* targeting svg2 */
+    z-index: 2;
+    pointer-events: none;  /* Allow click events to pass through */
+}
+
+#treemapDiv svg:nth-of-type(1) { /* targeting svg1 */
+    z-index: 1;
+}
+
+#networkDiv {
+    width: 80vw;
+    height: 70vh;
+}
+
+
+body {
+    background-color: #faeeef;  /* A very light pink as a fallback color */
+    background-image: linear-gradient(0deg, #fff3f4 0%, #fffbf4 100%); /* Gentle gradient from very light pink to a soft peach */
+}
+
+.bubble-title{
+    padding: 20px;
+    color: rgba(217, 203, 181, 0.92);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+h2 {
+    color: #2b2f32;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.dashed-table tr {
+    border: 1px dashed #000;
+}
+
+.dashed-table th, .dashed-table td {
+    border: 1px dashed #000;
+    padding: 8px;
+    text-align: left;
+}
+
+#info h2, #info table {
+    background-color: #f0f0f0; /* Your desired background color */
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 10px; /* Space between elements */
+}
+
+#info table {
+    width: 100%; /* Adjust the width as needed */
+}
+
+.liquorImages {
+    display: block; /* Elements are inline by default. 'block' makes it possible to center them */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.large-bubbles:hover {
+    cursor: pointer;
+    stroke: darkgray;
+    stroke-width: 1px;
+}
+

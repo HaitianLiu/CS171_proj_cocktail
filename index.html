@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- provide a brief description of the page's content.Search engines often display this
+    description in search results to give users an idea of what the page is about before they click on it.   -->
+    <meta name="description" content="">
+
+    <!--  It controls how the page is displayed on different devices, especially on mobile.  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cocktail</title>
+
+    <!-- Load CSS libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.css" integrity="sha512-wCVOuVtxsXqrQK7tj9j4BvyfITQmpp7UE7mVilD7aieGLYFEIAa5UKTP1RapOf6dxQ9JIKAneakcyykWG4r4Ow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- GOOGLE FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+    <!-- own CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id="fullpage">
+
+    <!-- Title page -->
+    <div class="section" id="section1">
+        <div class = "container-fluid" style="height: 100vh;">
+            <div class = "row justify-content-center align-self-center intro-title" style="height: 70vh; padding: 10vh;">
+                <h1 style="text-align: center"> The Art of Mixology </h1>
+                <h2 style="text-align: center"> All about Cocktails </h2>
+            </div>
+            <div class = "row" style="height: 30vh; padding: 0;">
+                <div class="col">
+                    <div id ="icon-bottom-bar" style="height: 40%; width:100%; background-color: white"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="section2">
+        <div class="container-fluid">
+            <div class="row" style="height: 100vh;">
+                <div class="col-8">
+                    <br>
+
+                    <div id="bubbles" style="height: 100%; width:100%;"></div>
+                </div>
+
+                <div class="col-4">
+                    <!-- Splitting the second column vertically -->
+                    <div class="row">
+                        <div class="col-12">
+                            <br>
+                            <br>
+                            <br>
+                            <h1 style="text-align: center" class="bubble-title"> 36 Popular Cocktails by Base Liquors</h1>
+                        </div>
+                        <div class="col-12" id="info">
+<!--                            <p>This is the bottom half of the second column.</p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--&lt;!&ndash;                <button id="resetViewButton" onclick="myBubbleChart.resetView()">Reset View</button>&ndash;&gt;-->
+\
+
+<!--    <div class="section" id="section3">-->
+<!--        <div class = "container-fluid" style="height: 100vh; padding-top: 2vh">-->
+<!--            <h1 style="text-align: center"> All Cocktails </h1>-->
+<!--            <div class = "row" >-->
+<!--                <div class="col">-->
+<!--                    <div id="allDrink"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- All drink enoch -->
+    <div class="section">
+        <div class = "container-fluid" style="height: 100vh; padding-top: 2vh">
+            <h1 style="text-align: center"> All Cocktails </h1>
+            <div class ="row">
+                <div class="col-md-3">
+                    <select id='categorySelector' class="custom-select align-self-center" style="width: 50%" onchange="categoryChange()">
+                        <option value="strCategory" selected>Drink Category</option>
+                        <option value="strGlass">Glass type</option>
+                        <option value="Alc_type">Alcohol type</option>
+                        <option value="Basic_taste">Basic taste</option>
+                    </select>
+                </div>
+            </div>
+            <div class = "row" style="height: 80vh;">
+                <div class="col">
+                    <div id="all_drinks_enoch" style="height: 100%; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Network -->
+    <div class="section" id="network-page">
+        <div class="container-fluid" style="height: 100vh; padding-top: 2vh">
+            <div class="row">
+                <div class="col-10 offset-1">
+                    <!-- HEADING -->
+                    <div class="row d-flex justify-content-center" style="height: 10vh; padding: 0;">
+                        <div class="align-self-center">
+                            <h1 style="text-align: center">Let's look at some common cocktail ingredients!</h1>
+                        </div>
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="row d-flex justify-content-center" style="height: 80vh; padding: 0;">
+                        <div class="col-10">
+<!--                            <div id="networkDiv" style="height: 100%; width:100%;"></div>-->
+                            <div id="networkDiv"></div>
+                        </div>
+                        <div class="col-2">
+                            <div id="node-info" style="padding-top: 10vh; margin-right: 0">
+                                <h1 id="node-name"></h1>
+<!--                                <h3 style="text-decoration: underline; text-align: left;">Connections</h3>-->
+                                <h4 id="node-connections"></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="taste-page">
+        <div class = "container-fluid" style="height: 100vh; padding-top: 2vh">
+            <h1 style="text-align: center"> "Taste" Them</h1>
+            <div class = "row" style="height: 90vh; padding: 0;">
+                <div class="col">
+                    <div id="taste" style="height: 100%; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TreeMap -->
+    <div class="section">
+        <div class = "container-fluid" style="height: 100vh; padding-top: 2vh">
+            <h1 style="text-align: center"> Complete the Look </h1>
+            <div class = "row justify-content-center align-self-center" style="height: 85vh; padding: 0;">
+                <div class="col-md-10">
+                    <div id="treemapDiv" style="height: 100%; width:100%;"></div>
+                </div>
+                <!--                <div class="col-md-3">-->
+                <!--                    <br>-->
+                <!--                    <h4> Click left sub rectangle to see more detail</h4>-->
+                <!--                    <br>-->
+                <!--                    <br>-->
+                <!--                    <div id="treemap_right"></div>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mixology -->
+<!--    <div class="section" id="mixology-page">-->
+<!--        <div class="container-fluid" style="height: 95vh">-->
+<!--            <h1> Mixology 101</h1>-->
+<!--            <div class="row">-->
+<!--                <div class="col-6">-->
+<!--                    <div id="ingredients-container"></div>-->
+<!--                </div>-->
+<!--                <div class="col-6">-->
+<!--                    <div id="cocktail-shaker">-->
+<!--                        &lt;!&ndash; SVG of the cocktail shaker goes here &ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id="recipe-container"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</div>
+
+
+    <script>
+        window.addEventListener('resize', () => {
+            let viewportHeight = window.innerHeight;
+            let viewportWidth = window.innerWidth;
+
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.height = viewportHeight + 'px';
+                section.style.width = viewportWidth + 'px';
+            });
+        });
+
+    </script>
+
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+    <!-- embedding JS libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- full page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js" integrity="sha512-LGiXf+jHGTHcIybSsOWO3I/in+OObCkcEsWIZ7IyhzfD6RzD5qDUw2CK+JveuI7zTSEcDG//bIOvOpAJW2BWsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://unpkg.com/d3-force-cluster@latest"></script>
+    <script
+            type="text/javascript"
+            src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <!-- own JS -->
+    <script src="js/main.js"></script>
+    <script src="js/bubbleChart.js"></script>
+    <script src="js/allBubbleChart.js"></script>
+    <script src="js/treemap.js"></script>
+    <script src="js/networkVis.js"></script>
+    <script src="js/iconVis.js"></script>
+    <script src="js/tasteBubbleChart.js"></script>
+<!--    <script src="js/mixologyVis.js"></script>-->
+
+</body>
+</html>
