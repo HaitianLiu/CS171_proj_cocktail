@@ -14,11 +14,18 @@
 
 h2.liquor-heading, h2.cocktail-name, h2.liquor-name { !important;
     font-family: 'Amatic SC', sans-serif;
-    font-size: 2.5em; /* Adjust size as needed */
+    font-size: 3em; /* Adjust size as needed */
+    text-align: center;
+    margin-bottom: 20px; /* Add some space below the title */
+    font-weight: bold;
+}
+
+text.text-small-bubble{
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 3em; /* Adjust size as needed */
     text-align: center;
     margin-bottom: 20px; /* Add some space below the title */
 }
-
 .subheading {
     font-family: 'Amatic SC', sans-serif;
     font-size: 1.5em; /* Slightly smaller than the cocktail name */
@@ -113,13 +120,15 @@ h2.liquor-heading, h2.cocktail-name, h2.liquor-name { !important;
     transition: opacity 0.3s; /* Smooth transition for appearing and disappearing */
 }
 
-.liquor-info, .liquor-fun {
+.liquor-info, .liquor-fun, .cocktail-instructions, .cocktail-ingredients {
     font-family: 'Josefin Slab', serif;
-    font-size: 0.9em; /* Slightly smaller than the cocktail name */
+    font-size: 1em; /* Slightly smaller than the cocktail name */
     text-align: center;
 }
 
-
+/*.text-bubble{*/
+/*    font-weight: bold;*/
+/*}*/
 
 
 
@@ -154,7 +163,7 @@ h2.liquor-heading, h2.cocktail-name, h2.liquor-name { !important;
 }
 
 #section1 {
-    background-image: url('../img/edgar.jpg');
+    background-image: url('../img/gpt3.png');
     /*background: rgba(0, 0, 0, 0.5);*/
     /* ... other background styles ... */
 }
@@ -201,9 +210,24 @@ h1 {
     pointer-events: none;
 }
 
+
+#bubbles .bubble-chart-text{
+    pointer-events: none;
+}
+
+#bubbles .text-small-bubble {
+    pointer-events: none;
+}
+
+#liquor-tt {
+    pointer-events: none;
+}
+
+
 #networkDiv {
     width: 80vw;
     height: 70vh;
+    font-family: 'Amatic SC', sans-serif;
 }
 
 
@@ -266,23 +290,17 @@ h2 {
     font-family: 'Young Serif', serif;
     font-size: 8vh;
     font-weight: bold;
-    background-image: linear-gradient(to right, #117770, #82eeac, #50c2be, #4cbd79);
+    background-image: linear-gradient(to right, #b8ee60, #74d77c, #6fef8a, #42b770);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
 
-#section1-transpage h2 {
-    color: #08726d;
-    text-align: center;
-    font-family: 'Young Serif', serif;
-    font-size: 3.5vh;
-}
 
 /*section-allcocktails*/
 #section-allcocktails h1 {
     text-align: center;
-    font-family: 'Young Serif', serif;
+    font-family: 'Amatic SC', sans-serif;
     font-size: 4vh;
     background-image: linear-gradient(to right, #c3da6e, #da76bb, #9ad352, #a2636f);
     background-clip: text;
@@ -293,35 +311,35 @@ h2 {
 #section-allcocktails span {
     color: #08726d;
     text-align: center;
-    font-family: 'Young Serif', serif;
+    font-family: 'Amatic SC', sans-serif;
     font-size: 20px;
 }
 
-#categorySelector {
+#categorySelector, .legend-label{
     color: #08726d;
-    font-family: 'Young Serif', serif;
+    font-family: 'Indie Flower', sans-serif;
 }
 
 #colorSelector {
     color: #08726d;
-    font-family: 'Young Serif', serif;
+    font-family: 'Amatic SC', sans-serif;
 }
 
 
 /*section-popular-transpage*/
-#section-popular-transpage h1 {
-    color: #08726d;
+#section-popular-transpage h1, #section1-transpage h2, #section-treemap-transpage h1, #network-page h1 {
+    color: #6b5a40;
     text-align: center;
-    font-family: 'Young Serif', serif;
+    font-family: 'Amatic SC', sans-serif;
     font-size: 66px;
     font-weight: bold;
 }
 
-#section-popular-transpage h2 {
-    color: #08726d;
+#section-popular-transpage h2, #section-treemap-transpage h2 {
+    color: #6b5a40;
     text-align: center;
-    font-family: 'Young Serif', serif;
-    font-size: 28px;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 35px;
 }
 
 
@@ -339,11 +357,34 @@ body, h2, h3, p {
 /*    padding: 2rem 0;*/
 /*}*/
 
+@keyframes oscillate {
+    0%, 100% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+#section1 h1 {
+    color: rgb(107, 90, 64);
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 66px;
+    font-weight: bold;
+    animation: oscillate 2s ease-in-out infinite;
+    /*background-color: rgba(128, 128, 128, 0.6); !* Grey background with opacity *!*/
+    /*padding: 5px 10px; !* Reduced padding *!*/
+    /*display: inline-block; !* Makes the background wrap the text *!*/
+}
+
+
+
 /* Team Section Styles */
 #our-team-page h1 {
     color: #08726d;
     text-align: center;
-    font-family: 'Young Serif', serif;
+    font-family: 'Amatic SC', sans-serif;
     font-size: 66px;
     font-weight: bold;
 }
@@ -381,3 +422,52 @@ body, h2, h3, p {
     color: #666;
 }
 
+
+#treemapDiv .tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 6px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+#treemapDiv .detail-group {
+    font-family: 'Amatic SC', sans-serif;
+    fill: #4b5454;
+}
+
+#treemapDiv .treemap_rect {
+    font-family: 'Amatic SC', sans-serif;
+    fill: #d5f6f6;
+}
+
+#treemap-page h1 {
+    color: #7c240a;
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 46px;
+}
+
+#treemap-page em {
+    color: #790406;
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 18px;
+}
+
+#final-page h1 {
+    color: #790406;
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 46px;
+}
+
+#final-page em {
+    color: #790406;
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 22px;
+}

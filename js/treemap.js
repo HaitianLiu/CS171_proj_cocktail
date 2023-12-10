@@ -11,7 +11,7 @@ class TreeMap {
         let vis = this;
 
         // Set the dimensions and margins of the diagram
-        vis.margin = { top: 40, right: 40, bottom: 40, left: 40 };
+        vis.margin = { top: 20, right: 40, bottom: 20, left: 40 };
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;  // Adjust as needed
 
@@ -27,6 +27,10 @@ class TreeMap {
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
             .attr("transform", `translate(${vis.margin.left},${vis.margin.top})`);
+
+        vis.tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
 
         vis.wrangleData();
     }
@@ -67,9 +71,9 @@ class TreeMap {
         // Define a color scale
         let colorScale = d3.scaleLinear()
             .domain([minValue, maxValue])
-            .range(["#7ee3db", "#319ba8"]);
+            .range(["#f3b28f", "#f1926e"]);
 
-        let hoverColor = "#fae97b"
+        let hoverColor = "#e1a071"
 
         // Create the root variable
         let root = d3.stratify()
@@ -112,7 +116,7 @@ class TreeMap {
                 let centerY = d.y0 + rectHeight / 2;
 
                 vis.svg.append("image")
-                    .attr("xlink:href", 'img/' + d.data.id + '.png')
+                    .attr("xlink:href", 'img/treemap_glass/' + d.data.id + '.png')
                     .attr("x", centerX - imageSize / 2) // Center the image
                     .attr("y", centerY - imageSize / 2) // Center the image
                     .attr("width", imageSize)
@@ -169,6 +173,7 @@ class TreeMap {
                     .append("text")
                     .text(d => d.data.id)
                     .attr("font-size", "12px")
+                    .attr("font-family", "Young Serif")
                     .attr("fill", "white")
                     .attr("x", d => d.x0/2 + 5)
                     .attr("y", d => d.y0 + 20)
@@ -193,8 +198,9 @@ class TreeMap {
             .enter()
             .append("text")
             .text(d => d.data.id)
-            .attr("font-size", "12px")
+            .attr("font-size", "16px")
             .attr("fill", "white")
+            .attr("font-family", "Young Serif")
             .attr("x", d => d.x0 + 5)
             .attr("y", d => d.y0 + 20)
             .attr("visibility", function(d) {
@@ -259,7 +265,7 @@ class TreeMap {
         // Add image
         let imageHeight = vis.height * 0.3;
         detailGroup.append("image")
-            .attr("xlink:href", 'img/' + d.data.id + '.png')
+            .attr("xlink:href", 'img/treemap_glass/' + d.data.id + '.png')
             .attr("width", cardWidth) // Adjust width as needed
             .attr("height", imageHeight) // Adjust height as needed
             .attr("x", 0)
@@ -269,7 +275,7 @@ class TreeMap {
 
         // Add title (glass type)
         detailGroup.append("text")
-            .text(`${d.data.id}: ${d.data.value} drinks`)
+            .html(`${d.data.id}: &nbsp; ${d.data.value} drinks`)
             .attr("x", 10)
             .attr("y", currentY)
             .attr("font-size", "20px")
@@ -285,28 +291,53 @@ class TreeMap {
             .attr("font-weight", "bold")
             .attr("font-size", "16px");
 
-        currentY += 30; // Increment Y position
+        currentY += 20; // Increment Y position
 
-        // List ingredients (garish)
+        // Variables to manage image placement in rows
+        let imgX = 10, imgY = currentY;
+        const imgSize = 50; // Adjust size of the image as needed
+        const maxImagesPerRow = 5;
+        let imageCount = 0;
+
+        // Loop through ingredients (garish) to display images
         d.data.garish.forEach(item => {
-            let ingredient = Object.keys(item).join(', ');
-            detailGroup.append("text")
-                .text(ingredient)
-                .attr("x", 20) // Indent for list items
-                .attr("y", currentY)
-                .attr("font-size", "14px")
-                .on("mouseover", handleMouseOver)
-                .on("mouseout", handleMouseOut)
-                .on("click", function(event, d) {
-                    // Bubble specific logic...
-                    event.stopPropagation(); // Prevent this click from propagating to the SVG
-                    const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(ingredient)} in cocktail`;
-                    window.open(googleSearchUrl, '_blank');
+            // If the maximum number of images per row is reached, reset x position and move to next line
+            if (imageCount >= maxImagesPerRow) {
+                imgX = 10; // Reset X to start position
+                imgY += imgSize + 10; // Move to next line
+                imageCount = 0; // Reset image count for new line
+            }
+
+            // Assume images are named as the ingredient and stored in 'img/ingredients/' directory
+            let ingredientImage = 'img/ingredient/' + Object.keys(item).join('') + '.png';
+
+            detailGroup.append("image")
+                .attr("xlink:href", ingredientImage)
+                .attr("x", imgX)
+                .attr("y", imgY)
+                .attr("width", imgSize)
+                .attr("height", imgSize)
+                .on("mouseover", function(event) {
+                    vis.tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    vis.tooltip.html(Object.keys(item))
+                        .style("left", (event.pageX) + "px")
+                        .style("top", (event.pageY - 28) + "px");
                 })
-            currentY += 20; // Increment for next item
+                .on("mouseout", function() {
+                    vis.tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+
+                    // Increment X position for next image
+            imgX += imgSize + 10;
+            imageCount++;
         });
 
-        currentY += 20; // Increment Y position for "Recommended drink" section
+        // Adjust currentY for subsequent elements
+        currentY = imgY + imgSize + 30;
 
         // Add "Recommended drink" text
         detailGroup.append("text")
@@ -318,8 +349,9 @@ class TreeMap {
 
         currentY += 30; // Increment Y position
 
-        // List recommended drinks (taking first 3 recommendations)
-        let recommendations = d.data.recommended.slice(0, 3);
+        // Shuffle and take the first 3 recommendations
+        let shuffledRecommendations = shuffle([...d.data.recommended]);
+        let recommendations = shuffledRecommendations.slice(0, 3);
         recommendations.forEach(drink => {
             detailGroup.append("text")
                 .text(drink)
@@ -359,6 +391,15 @@ class TreeMap {
 
     }
 
+
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 

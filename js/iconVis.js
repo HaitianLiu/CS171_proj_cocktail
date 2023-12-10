@@ -7,7 +7,7 @@ class iconVis {
         // Set dimensions of the parent element
         this.width = document.getElementById(this.parentElement).getBoundingClientRect().width;
         this.height = document.getElementById(this.parentElement).getBoundingClientRect().height;
-        this.iconWidth = 70; // Width of each icon
+        this.iconWidth = 100; // Width of each icon
 
         this.isPaused = false;
 
@@ -89,13 +89,13 @@ class iconVis {
             .attr("y", vis.height / 2 - vis.iconWidth / 2)
             .attr("width", vis.iconWidth)
             .attr("height", vis.iconWidth)
-            .attr("xlink:href", d => `img/${d.rank}.png`);
+            .attr("xlink:href", d => `img/popular_drink/${d.strDrink}.png`);
 
         // Function to update positions
         function scroll() {
             if (!vis.isPaused) {
                 vis.icons.attr("x", function (d) {
-                    d.xPosition -= 2; // 调整滚动速度
+                    d.xPosition -= 1.2; // 调整滚动速度
 
                     // 当图标移动到屏幕左侧时
                     if (d.xPosition < -vis.iconWidth) {

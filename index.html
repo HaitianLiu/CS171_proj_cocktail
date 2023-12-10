@@ -25,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Josefin+Slab:ital,wght@1,200&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Josefin+Slab:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 
     <!-- own CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -36,13 +37,15 @@
     <!-- Title page -->
     <div class="section" id="section1">
         <div class = "container-fluid" style="height: 100vh;">
-            <div class = "row justify-content-center align-self-center intro-title" style="height: 70vh; padding: 10vh;">
-                <h1 style="text-align: center"> The Art of Mixology </h1>
-                <h2 style="text-align: center"> All about Cocktails </h2>
+            <div class="row justify-content-center align-self-center intro-title" style="height: auto;">
+                <h1 style="text-align: center; background-color: rgba(240, 240, 240, 0.6); padding: 10px; display: inline-block; margin: 0;">
+                    All about Cocktails
+                </h1>
             </div>
+            <div style="height:56.7vh"></div>
             <div class = "row" style="height: 30vh; padding: 0;">
                 <div class="col">
-                    <div id ="icon-bottom-bar" style="height: 40%; width:100%;"></div>
+                    <div id ="icon-bottom-bar" style="height: 40%; width:100%; background-color: rgba(240, 240, 240, 0.6); margin: 0;"></div>
                 </div>
             </div>
         </div>
@@ -52,14 +55,15 @@
     <!-- Title transection page -->
     <div class="section" id="section1-transpage">
         <div class = "container-fluid" style="height: 100vh;">
-            <div class = "row justify-content-center align-self-center" style="height: 70vh; padding: 10vh;">
-                <h1 style="text-align: center"> Discover the World in a Glass </h1>
+            <div class = "row justify-content-center align-self-center" style="height: 70vh; padding-top: 10vh;">
+<!--                <h1 style="text-align: center"> Discover the World in a Glass </h1>-->
                 <br><br><br><br><br><br><br>
-                <h2 style="text-align: center"> Across the globe, countless drinks tell stories of culture, tradition, and innovation.<br><br>
-                    Do you know them? <br><br>
-                    From the bustling streets of Tokyo to the serene vineyards of Tuscany, every sip offers a journey. <br><br>
-                    Let's embark on an adventure to uncover the secrets and stories behind the world's most fascinating cocktails. <br><br>
-                    Where will your taste take you? </h2>
+                <h2>Savor the world's tales one cocktail at a time <br><br> <br><br>where will your taste journey begin?</h2>
+<!--                <h2 style="text-align: center"> Across the globe, countless drinks tell stories of culture, tradition, and innovation.<br><br>-->
+<!--                    Do you know them? <br><br>-->
+<!--                    From the bustling streets of Tokyo to the serene vineyards of Tuscany, every sip offers a journey. <br><br>-->
+<!--                    Let's embark on an adventure to uncover the secrets and stories behind the world's most fascinating cocktails. <br><br>-->
+<!--                    Where will your taste take you? </h2>-->
             </div>
         </div>
     </div>
@@ -83,7 +87,7 @@
                 <div class="col-md-3 d-flex align-items-center">
                     <span class="mr-2">Color by: &nbsp;</span>
                     <select id='colorSelector' multiple class="custom-select form-select" style="width: auto" onchange="colorChange()">
-                        <option value="Basic_taste" selected>Basic taste</option>
+                        <option value="Basic_taste">Basic taste</option>
                         <option value="strCategory">Drink Category</option>
                         <option value="strGlass">Glass type</option>
                         <option value="Alc_type">Alcohol type</option>
@@ -106,7 +110,7 @@
                 <br><br><br><br><br><br><br>
                 <h2 style="text-align: center"> In our journey, you have explored over 400 unique cocktails,
                     each with its distinct flavors and stories. <br><br>
-                    But amidst this vast array of choices, do you know which ones are the most popular? <br><br>
+                    Do you know which ones are the most popular? <br><br>
                     Now, let's delve deeper and discover the 36 classic cocktails categorized by their base liquors. <br><br>
                     These beloved drinks are not only exceptional in taste but also hold a revered status across the globe. <br><br>
                     Are you ready? <br><br>
@@ -123,7 +127,8 @@
                     <h2 class="liquor-heading">Liquor Base</h2>
                 </div>
             </div>
-            <div class="row" style="height: 75vh; border: thin solid black; border-radius: 5px">
+<!--            ; border: thin solid black; border-radius: 5px-->
+            <div class="row" style="height: 75vh">
                 <div class="bubble-col col-12">
                     <div class="row" id="bubbles" style="height: 75vh;"></div>
 
@@ -133,6 +138,8 @@
                 </div>
             </div>
         </div>
+        <em>&nbsp;&nbsp;&nbsp; * Click anywhere to reset view</em><br>
+        <em>&nbsp;&nbsp;&nbsp; * Bubble are sized by popularity (more popular base liquor -> higher ranking). We've selected the top 36 cocktails from <a href="https://www.diffordsguide.com/g/1127/worlds-top-100-cocktails/about">"Worlds Top 100 Cocktails".</a></em>
     </div>
 
 
@@ -195,12 +202,23 @@
 <!--            </div>-->
 <!--        </div>-->
 <!--    </div>-->
+    <div class="section" id="section-treemap-transpage">
+        <div class = "container-fluid" style="height: 100vh;">
+            <div class = "row justify-content-center align-self-center" style="height: 70vh; padding: 10vh;">
+                <h1 style="text-align: center"> Cheers to Variety!  </h1>
+                <br><br><br><br><br><br><br>
+                <h2 style="text-align: center"> Did you know each drink has its own glass? 🍸🥂 From Champagne Flutes to Whiskey Sours, every glass adds flair.
+                    <br><br>Let's mix it up and garnish your glass - your next sip is not just a drink, it's a masterpiece! </h2>
+            </div>
+        </div>
+    </div>
 
     <!-- TreeMap -->
-    <div class="section">
+    <div class="section" id = "treemap-page">
         <div class = "container-fluid" style="height: 100vh; padding-top: 2vh">
-            <h1 style="text-align: center"> Complete the Look </h1>
-            <div class = "row justify-content-center align-self-center" style="height: 85vh; padding: 0;">
+            <h1 style="text-align: center"> Glass type & Garnish </h1>
+
+            <div class = "row justify-content-center align-self-center" style="height: 80vh; padding: 0;">
                 <div class="col-md-10">
                     <div id="treemapDiv" style="height: 100%; width:100%;"></div>
                 </div>
@@ -212,26 +230,31 @@
                 <!--                    <div id="treemap_right"></div>-->
                 <!--                </div>-->
             </div>
+            <em>&nbsp;&nbsp;&nbsp; * Click to discover various decorations that can enhance your cocktail.</em><br>
+            <em> &nbsp;&nbsp;&nbsp; * The area of each rectangle represents the number of drinks corresponding to a specific type of glass.</em>
         </div>
     </div>
 
     <!-- Mixology -->
-<!--    <div class="section" id="mixology-page">-->
-<!--        <div class="container-fluid" style="height: 95vh">-->
-<!--            <h1> Mixology 101</h1>-->
-<!--            <div class="row">-->
-<!--                <div class="col-6">-->
-<!--                    <div id="ingredients-container"></div>-->
-<!--                </div>-->
-<!--                <div class="col-6">-->
-<!--                    <div id="cocktail-shaker">-->
-<!--                        &lt;!&ndash; SVG of the cocktail shaker goes here &ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div id="recipe-container"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="section" id="mixology-page">
+        <div class="container-fluid" style="height: 95vh">
+            <h1> Mixology 101</h1>
+            <div class="row">
+                <div class="col-6">
+                    <div id="ingredients-container">
+                        <button id="fillButton">Fill</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="cocktail-shaker">
+                        <!-- SVG of the cocktail shaker goes here -->
+                    </div>
+                </div>
+                <div id="recipe-container">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Our Team -->
@@ -247,7 +270,7 @@
                         <p>M.S in Data Science</p>
                     </div>
                     <div class="team-member">
-                        <img src="img/team_img/team3.jpg" alt="Danni Lai">
+                        <img src="img/team_img/team2.jpg" alt="Danni Lai">
                         <h3>Danni Lai</h3><br>
                         <p>M.S in Data Science</p>
                     </div>
@@ -257,6 +280,36 @@
                         <p>M.S in Data Science</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acknowledgements -->
+    <div class="section" id="final-page">
+        <div class = "container-fluid" style="height: 100vh; padding-top: 2vh">
+            <div style="height:5vh"></div>
+            <div class = "row justify-content-center align-self-center">
+                <h1 style="text-align: center"> Acknowledgements </h1>
+                <div style="height:5vh"></div>
+                <h2><em>We extend our heartfelt gratitude to the CS 171 teaching staff for their guidance and instruction throughout our project.<br><br>
+                    A special acknowledgment goes to our Teaching Fellow, Robert Roessler, for his exceptional support!</em></h2>
+            </div>
+
+            <div style="height:10vh"></div>
+
+            <div class = "row justify-content-center align-self-center">
+                <h1 style="text-align: center"> Sources </h1>
+                <ul>
+                    <li>
+                        Data set #1:
+                    </li>
+                    <li>
+                        Data set #2:
+                    </li>
+                    <li>
+                        Data set #3:
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -306,7 +359,7 @@
     <script src="js/networkVis.js"></script>
     <script src="js/iconVis.js"></script>
     <script src="js/tasteBubbleChart.js"></script>
-<!--    <script src="js/mixologyVis.js"></script>-->
+    <script src="js/mixologyVis.js"></script>
 
 </body>
 </html>
