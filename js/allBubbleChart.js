@@ -107,8 +107,11 @@ class allBubbleChart {
             .style('font-size', '16px') // Set the text size
             .style('font-family', 'Indie Flower')
             .style('font-weight', 'bold')
-            .text('* The size of the bubbles is determined by the number of ingredients in the cocktail. ' +
-                ' Click to see more details.');
+            .html(`
+                  <tspan>* Click legend to see selected view.    </tspan>
+                  <br><br>
+                  <tspan>* The size of the bubbles is determined by the number of ingredients in the cocktail.</tspan>
+              `);
     }
 
 

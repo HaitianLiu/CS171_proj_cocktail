@@ -133,18 +133,6 @@ text.text-small-bubble{
 
 
 
-
-
-#resetViewButton{
-    background-color: #89b9d9;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
 .tooltip {
     position: absolute;
     text-align: center;
@@ -226,8 +214,8 @@ h1 {
 
 
 #networkDiv {
-    width: 80vw;
-    height: 70vh;
+    width: 70vw;
+    height: 80vh;
     font-family: 'Amatic SC', sans-serif;
 }
 
@@ -250,7 +238,6 @@ h2 {
     text-align: center;
     font-size: 20px;
     padding: 10px;
-
 }
 
 .dashed-table tr {
@@ -286,6 +273,33 @@ h2 {
     fill: darkgray;
 }
 
+#section-allcocktails .legend-circle:hover {
+    cursor: pointer;
+    stroke: darkgray;
+    stroke-width: 2px;
+    fill: darkgray;
+}
+
+#section-allcocktails .bubble:hover{
+    cursor: pointer;
+    stroke: darkgray;
+    stroke-width: 2px;
+    fill: darkgray;
+}
+
+#categorySelector {
+    cursor: pointer;
+    stroke: darkgray;
+    stroke-width: 2px;
+    fill: darkgray;
+}
+
+#colorSelector {
+    cursor: pointer;
+    stroke: darkgray;
+    stroke-width: 2px;
+    fill: darkgray;
+}
 /*section1-transpage*/
 #section1-transpage h1 {
     text-align: center;
@@ -303,10 +317,11 @@ h2 {
 #section-allcocktails h1 {
     text-align: center;
     font-family: 'Amatic SC', sans-serif;
-    font-size: 4vh;
     background-image: linear-gradient(to right, #c3da6e, #da76bb, #9ad352, #a2636f);
     background-clip: text;
     -webkit-background-clip: text;
+    font-size: 46px;
+    font-weight: bold;
     color: transparent;
 }
 
@@ -320,16 +335,19 @@ h2 {
 #categorySelector, .legend-label{
     color: #6b5a40;
     font-family: 'Indie Flower', sans-serif;
+    font-size: 18px;
 }
 
 #colorSelector {
     color: #6b5a40;
-    font-family: 'Amatic SC', sans-serif;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 18px;
+
 }
 
 
 /*section-popular-transpage*/
-#section-popular-transpage h1, #section1-transpage h2, #section-treemap-transpage h1, #network-page h1, #mixology-page h1, .liquor-heading {
+#section-popular-transpage h1, #section1-transpage h2, #section-mixology-transpage h2, #section-ourteam-transpage h2, #section-treemap-transpage h1, #network-page h1, #mixology-page h1, .liquor-heading {
     color: #6b5a40;
     text-align: center;
     font-family: 'Amatic SC', sans-serif;
@@ -337,11 +355,25 @@ h2 {
     font-weight: bold;
 }
 
-#section-popular-transpage h2, #section-treemap-transpage h2, .fa, #network-page h2 {
+#section-popular-transpage h2, #section-treemap-transpage h2, .fa {
     color: #6b5a40;
     text-align: center;
     font-family: 'Indie Flower', sans-serif;
     font-size: 35px;
+}
+
+#network-page h2 {
+    color: #6b5a40;
+    text-align: center;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 30px;
+}
+
+#network-page h3 {
+    color: #6b5a40;
+    text-align: center;
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 20px;
 }
 
 #mixology-intro h2 {
@@ -377,10 +409,10 @@ h2 {
     font-size: 25px;
 }
 
-em{
+em, tspan{
     color: #6b5a40;
     font-family: 'Indie Flower', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 
@@ -423,10 +455,26 @@ body, h2, h3, p {
 
 /* Team Section Styles */
 #our-team-page h1 {
-    color: #08726d;
+    color: rgb(107, 90, 64);
     text-align: center;
     font-family: 'Amatic SC', sans-serif;
     font-size: 66px;
+    font-weight: bold;
+}
+
+#our-team-page h2, #our-team-page h3 {
+    color: rgb(107, 90, 64);
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#our-team-page p, #final-page h2, li {
+    color: rgb(107, 90, 64);
+    text-align: center;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -486,35 +534,35 @@ body, h2, h3, p {
 }
 
 #treemap-page h1 {
-    color: #7c240a;
+    color: rgb(107, 90, 64);
     text-align: center;
     font-family: 'Amatic SC', sans-serif;
     font-size: 46px;
 }
 
 #treemap-page em {
-    color: #790406;
+    color: rgb(107, 90, 64);
     text-align: center;
     font-family: 'Indie Flower', sans-serif;
     font-size: 18px;
 }
 
 #treemap-page text{
-    fill: #790406;
+    color: rgb(107, 90, 64);
     font-family: 'Amatic SC', sans-serif;
     font-weight: bold;
     font-size: 25px;
 }
 
 #final-page h1 {
-    color: #790406;
+    color: rgb(107, 90, 64);
     text-align: center;
     font-family: 'Amatic SC', sans-serif;
     font-size: 46px;
 }
 
 #final-page em {
-    color: #790406;
+    color: rgb(107, 90, 64);
     text-align: center;
     font-family: 'Amatic SC', sans-serif;
     font-size: 22px;
@@ -525,6 +573,10 @@ body, h2, h3, p {
 .bubble.non-selectable {
     fill: lightgray; /* Gray out non-selectable bubbles */
     pointer-events: none; /* Disable pointer events */
+    transition: fill 1000ms;
+}
+
+.bubble.selectable {
     transition: fill 1000ms;
 }
 
@@ -559,8 +611,22 @@ body, h2, h3, p {
     visibility: hidden; /* 初始隐藏 */
 }
 
+
 /* 打字效果 */
 @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.line-mixology {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block; /* 让元素按行显示 */
+    width: 0;
+    visibility: hidden; /* 初始隐藏 */
+}
+
+@keyframes typing-mixology {
     from { width: 0; }
     to { width: 100%; }
 }
